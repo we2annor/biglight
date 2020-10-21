@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Loading from "../loading/Loading";
 import Error from "../error/Error";
 import { getApi } from "../../axios";
+import { lazyLoad } from "../../util/lazy";
 import "../../sass/pages/about.scss";
 
 const About = () => {
@@ -9,6 +10,7 @@ const About = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const api = "./about/spreadsheet";
+  lazyLoad();
 
   useEffect(() => {
     getApi(api, setLoading, setResults, setError);
