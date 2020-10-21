@@ -1,0 +1,64 @@
+*, *::after,*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+$width-container: 95vw;
+
+@mixin container {
+    width: $width-container;
+    margin: 0 auto;
+    text-align: center;
+    width: 100vw;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: sans-serif;
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 1.7;
+    color: #777777;
+    box-sizing: border-box;
+    position: relative;
+
+    img {
+        background: #F1F1FA;
+        width: 400px;
+        height: 300px;
+        display: block;
+        margin: 10px auto;
+        border: 0;
+    }
+
+    img {
+        width: 100vw;
+        height: 70vh;
+    }
+
+    .container {
+        @include container;
+    
+        span {
+            display: block;
+        }
+    
+        .heading {
+            font-size: 3rem;
+            color:#c28e0a; ;
+            margin: 3.5rem 0;
+            animation-name: moveLeft;
+            animation-duration: 3s;
+            animation-timing-function: ease-out;
+        }
+        
+    }
+}
+
+
+
+

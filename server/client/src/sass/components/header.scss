@@ -1,0 +1,50 @@
+
+$color-primary : #ffffff;
+$color-gold: #b1840a;
+$background-color:#302e2e66 ;
+$color-header-background:#0e0d0d ;
+$width-container: 95vw;
+
+@mixin middle-position {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.header {
+    width: 100vw;
+    height: 5vh;
+    background-color:$color-header-background;
+    position: relative;
+
+    .nav {
+        position: absolute;
+        width: $width-container;
+        @include middle-position;
+    
+        .navigation {
+            list-style: none;
+    
+            li {
+                color: $color-primary;
+                display: inline-block;
+                margin: .5rem;
+    
+                a {
+                    padding: .6rem 1.5rem;
+                    font-size: 1.5rem;
+                    color: $color-gold;
+                    font-weight: 500;
+                    text-decoration: none;
+    
+                    &:hover {
+                        background-color: $background-color;
+                        border-radius: .2rem;
+                        color: $color-primary;
+                    }
+                }
+            }
+        }
+    }
+}
+

@@ -1,0 +1,33 @@
+ .image {
+     position: relative;
+     margin: 8rem 0 4rem 0;
+
+    .image-container{
+         height: 85%;
+
+         img {
+             margin: 0;
+         }
+     }
+
+    .about-description {
+        height: 15%;
+        width: 100vw;
+        text-align: left;
+        padding: 1rem;
+        background-color: #d8d8d8;
+
+        .about-description-header {
+            font-size: 2.5rem;
+        }
+    }
+ }
+ 
+.about .footer-content {
+    display: block;
+}
+
+.about .footer-content-header {
+   font-size: 2rem;
+
+}
