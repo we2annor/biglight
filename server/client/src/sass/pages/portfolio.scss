@@ -47,30 +47,34 @@
 }
 
 @media all and (max-width:640px) and (min-width: 480px) {
-    .description-header-container {
-        width: 90%;
-        top:60%;
-        padding: 0;
-        margin: 0;
+    .portfolio-description {
 
-        .description-header {
-            padding: .5rem;
-            margin-bottom: .5rem;
+        .description-header-container {
+            width: 90%;
+            top:60%;
+            padding: 0;
+            margin: 0;
+    
+            .description-header {
+                padding: .5rem;
+                margin-bottom: .5rem;
+            }
         }
     }
 }
 
 @media all and (max-width:480px) and (min-width: 320px) {
     .description-header-container {
-        width: 50%;
-        top:60%;
+        width: 100%;
+        display: block;
+        top:0;
         padding: 0;
         margin: 0;
-        border: 1px solid green;
+        
 
         .description-header {
-            padding: .5rem;
-            margin-bottom: .5rem;
+            padding: 0;
+            margin-bottom: 0;
         }
     }
 }
