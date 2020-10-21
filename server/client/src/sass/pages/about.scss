@@ -5,8 +5,12 @@
     .image-container{
          height: 85%;
 
-         img {
+         .about-image {
+             display: block;
              margin: 0;
+             width: 100vw;
+             height: auto;
+             object-fit: cover;
          }
      }
 

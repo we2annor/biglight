@@ -10,6 +10,11 @@
         .image-container {
             position: relative;
             width: 75vw;
+
+            .portfolio-landing-image {
+                width: 75vw;
+                height: auto;
+            }
         }
 
         .portfolio-description {
@@ -26,6 +31,7 @@
                 width: 70%;
                 top: 40%;
                 left: 50%;
+                font-size: 1.5rem;
                 transform: translate(-50%, -50%);
             
                 .description-header {
@@ -36,6 +42,35 @@
                 }       
             }
 
+        }
+    }
+}
+
+@media all and (max-width:640px) and (min-width: 480px) {
+    .description-header-container {
+        width: 90%;
+        top:60%;
+        padding: 0;
+        margin: 0;
+
+        .description-header {
+            padding: .5rem;
+            margin-bottom: .5rem;
+        }
+    }
+}
+
+@media all and (max-width:480px) and (min-width: 320px) {
+    .description-header-container {
+        width: 50%;
+        top:60%;
+        padding: 0;
+        margin: 0;
+        border: 1px solid green;
+
+        .description-header {
+            padding: .5rem;
+            margin-bottom: .5rem;
         }
     }
 }

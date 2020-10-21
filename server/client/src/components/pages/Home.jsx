@@ -50,7 +50,12 @@ const Home = () => {
 
       <div className='container images'>
         <div>
-          <img src={deskTopImage} alt='home page 1' loading='lazy' />
+          <img
+            src={deskTopImage}
+            alt='home page 1'
+            data-src={deskTopImage}
+            className='landing-page-image lazy'
+          />
         </div>
       </div>
       <div className='container'>

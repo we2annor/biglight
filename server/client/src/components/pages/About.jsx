@@ -43,6 +43,7 @@ const About = () => {
         sizes='(max-with:600px) 640px, 1000px'
         alt='about'
         src={desktopImage}
+        className='about-image'
       />
     );
   };

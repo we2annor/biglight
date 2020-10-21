@@ -52,6 +52,12 @@ $width-container: 95vw;
 .home-page {
     .images {
        margin: 8rem 0 4rem 0;
+
+       .landing-page-image {
+           display: block;
+           width: 100vw;;
+           height: auto;
+       }
     }
 }
 
