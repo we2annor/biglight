@@ -40,7 +40,7 @@ const Portfolio = () => {
       <img
         data-src={desktopImage}
         alt='my portfolio'
-        //srcSet={`${desktopImage} 1024w, ${mobileImage} 640w `}
+        srcSet={`${desktopImage} 1024w, ${mobileImage} 640w `}
         size='(max-width: 600px) 640px, 100vw'
         src='./images/placeholder.png'
         className='lazy portfolio-landing-image'

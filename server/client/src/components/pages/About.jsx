@@ -41,7 +41,7 @@ const About = () => {
   const responsiveImage = (mobileImage, desktopImage) => {
     return (
       <img
-        //srcSet={`${desktopImage} 1024w, ${mobileImage} 640w `}
+        srcSet={`${desktopImage} 1024w, ${mobileImage} 640w `}
         sizes='(max-width: 600px) 640px, 100vw'
         alt='About'
         src='./images/placeholder.png'
