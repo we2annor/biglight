@@ -36,7 +36,7 @@ const Portfolio = () => {
   const responsiveImage = (mobileImage, desktopImage) => {
     return (
       <img
-        dataset-src={desktopImage}
+        data-src={desktopImage}
         alt='my portfolio'
         srcSet={`${desktopImage} 1024w, ${mobileImage} 640w `}
         size='(min-width: 36em) 33.3vw, 100vw'

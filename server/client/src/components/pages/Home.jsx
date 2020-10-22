@@ -53,8 +53,9 @@ const Home = () => {
           <img
             src={deskTopImage}
             alt='home page 1'
-            srcSet={`${desktopImage} 1024w, ${mobileImage} 640w `}
-            dataSet-src={deskTopImage}
+            srcSet={`${deskTopImage} 1024w, ${mobileImage} 640w `}
+            data-src={deskTopImage}
+            size='(min-width: 36em) 33.3vw, 100vw'
             className='landing-page-image lazy'
           />
         </div>
