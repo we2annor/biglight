@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Button from "../Button";
 import { getApi } from "../../axios";
 import Loading from "../loading/Loading";
+import { lazyLoad } from "../../util/lazy";
 import Error from "../error/Error";
 import "../../sass/pages/home.scss";
 
@@ -10,6 +11,7 @@ const Home = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const api = "./homepage/spreadsheet";
+  lazyLoad();
 
   useEffect(() => {
     getApi(api, setLoading, setResults, setError);
@@ -51,7 +53,7 @@ const Home = () => {
       <div className='container images'>
         <div>
           <img
-            src={deskTopImage}
+            src='./images/placeholder.png'
             alt='home page 1'
             srcSet={`${deskTopImage} 1024w, ${mobileImage} 640w `}
             data-src={deskTopImage}
