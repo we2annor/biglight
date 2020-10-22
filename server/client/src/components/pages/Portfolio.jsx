@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Loading from "../loading/Loading";
 import Error from "../error/Error";
-import { lazyLoad } from "../../util/lazy";
+import { LazyLoad } from "../../util/lazyLoad/LazyLoad";
 import { getApi } from "../../axios";
 import "../../sass/pages/portfolio.scss";
 
@@ -10,7 +10,6 @@ const Portfolio = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const api = "./portfolio/spreadsheet";
-  lazyLoad();
 
   useEffect(() => {
     getApi(api, setLoading, setResults, setError);
@@ -37,13 +36,13 @@ const Portfolio = () => {
 
   const responsiveImage = (mobileImage, desktopImage) => {
     return (
-      <img
-        data-src={desktopImage}
+      <LazyLoad
         alt='my portfolio'
         srcSet={`${desktopImage} 1024w, ${mobileImage} 640w `}
         size='(max-width: 600px) 640px, 100vw'
-        src='./images/placeholder.png'
-        className='lazy portfolio-landing-image'
+        src={desktopImage}
+        placeholder='./images/placeholder.png'
+        classname='lazy portfolio-landing-image'
       />
     );
   };

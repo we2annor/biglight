@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Loading from "../loading/Loading";
 import Error from "../error/Error";
-import { lazyLoad } from "../../util/lazy";
+import { LazyLoad } from "../../util/lazyLoad/LazyLoad";
 import { getApi } from "../../axios";
 import "../../sass/pages/about.scss";
 
@@ -10,7 +10,6 @@ const About = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const api = "./about/spreadsheet";
-  lazyLoad();
 
   useEffect(() => {
     getApi(api, setLoading, setResults, setError);
@@ -40,13 +39,13 @@ const About = () => {
 
   const responsiveImage = (mobileImage, desktopImage) => {
     return (
-      <img
+      <LazyLoad
         srcSet={`${desktopImage} 1024w, ${mobileImage} 640w `}
         sizes='(max-width: 600px) 640px, 100vw'
         alt='About'
-        src='./images/placeholder.png'
-        data-src={desktopImage}
-        className='about-image'
+        src={desktopImage}
+        classname='about-image'
+        placeholder='./images/placeholder.png'
       />
     );
   };

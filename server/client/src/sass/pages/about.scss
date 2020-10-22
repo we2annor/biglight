@@ -11,6 +11,13 @@
              width: 100vw;
              height: auto;
              object-fit: cover;
+
+             &.loaded:not(.has-error) {
+                animation: loaded 300ms ease-in-out;
+            }
+            &.has-error {
+                content: '';
+            }
          }
      }
 
@@ -26,4 +33,13 @@
         }
     }
  }
+
+ @keyframes loaded {
+    0% {
+    opacity: 0.1;
+    }
+    100% {
+    opacity: 1;
+    }
+}
  

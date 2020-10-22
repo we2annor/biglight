@@ -14,8 +14,17 @@
             .portfolio-landing-image {
                 width: 75vw;
                 height: auto;
+                display: block;
+
+                &.loaded:not(.has-error) {
+                    animation: loaded 300ms ease-in-out;
+                }
+                &.has-error {
+                    content: '';
+                }
             }
         }
+        
 
         .portfolio-description {
             width: 25vw;
@@ -43,6 +52,15 @@
             }
 
         }
+    }
+}
+
+@keyframes loaded {
+    0% {
+    opacity: 0.1;
+    }
+    100% {
+    opacity: 1;
     }
 }
 

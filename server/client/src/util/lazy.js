@@ -16,7 +16,7 @@ const timeOut = () => {
   images = document.querySelectorAll("img.lazy");
   images.forEach((img) => {
     if (img.offsetTop < window.innerHeight + scrollTop) {
-      img.srcset = img.dataset.src;
+      img.src = img.dataset.src;
       img.classList.remove("lazy");
     }
   });
@@ -33,7 +33,7 @@ if ("IntersectionObserver" in window) {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         let image = entry.target;
-        image.srcset = image.dataset.src;
+        image.src = image.dataset.src;
         image.classList.remove("lazy");
         imageObserver.unobserve(image);
       }
@@ -55,4 +55,13 @@ const onDomLoaded = () => {
 export const lazyLoad = () => {
   images = document.querySelectorAll("img.lazy");
   document.addEventListener("DOMContentLoaded", onDomLoaded());
+
+  const lazyloading = "loading" in HTMLImageElement.prototype;
+  if (lazyloading) {
+    images.forEach((image) => {
+      let dataSetSrc = image.dataset;
+      console.log("check", dataSetSrc.src, Object.entries(dataSetSrc));
+      image.src = image.dataset.src;
+    });
+  }
 };
