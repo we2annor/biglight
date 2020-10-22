@@ -9,7 +9,7 @@ const throttleTimeout = setTimeout(() => {
       image.classList.remove("lazy");
     }
   });
-}, 20);
+}, 2000);
 
 const lazy = () => {
   if (throttleTimeout) {
