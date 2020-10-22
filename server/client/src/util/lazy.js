@@ -4,23 +4,25 @@ const windowHeight = window.innerHeight;
 
 const throttleTimeout = setTimeout(() => {
   images.forEach((image) => {
+    console.log(image);
     if (image.offsetTop < windowHeight + scrollTop) {
-      image.src = image.dataset.src;
+      image.srcset = image.dataset.src;
       image.classList.remove("lazy");
     }
   });
-}, 2000);
+}, 300);
 
-const lazy = () => {
+const load = () => {
+  console.log("lazy", throttleTimeout);
   if (throttleTimeout) {
     clearTimeout(throttleTimeout);
   }
 };
 
 const onContentLoad = () => {
-  document.addEventListener("scroll", lazy);
-  window.addEventListener("resize", lazy);
-  window.addEventListener("orientationchange", lazy);
+  document.addEventListener("scroll", load);
+  window.addEventListener("resize", load);
+  window.addEventListener("orientationchange", load);
 };
 
 export const lazyLoad = () => {

@@ -27,7 +27,7 @@ Reducing the size of the Script file.
 Finding and Fixing Memory leaks in a page
 Optimised CSS.
 Server side rendering.
-Number of HTTP Roundtrips
+Reduce the number of HTTP Roundtrips
 Code Alternatives with better performance.
 Micro Optimisation in your code.
 
@@ -37,6 +37,9 @@ Gatsby is a framework for building websites and apps. It has in built security, 
 
 You can create websites that uses static files that has an incredibly fast page loads using its powerful preconfiguration. You can achieve an intelligent image loading, asset optimization, data prefetching, code splitting and server-side rendering with gatsby.
 It is also easy to use and very fast to get a project completed. You can build sites with services you want , like shopify, Stripe and wordPress. You can also integrate data from anywhere with gatsby, like APIs, databases, CMSs, static files or even multiple sources at once. 
+
+
+To get data from wordpress to gatsby through GraphQL. You can use a plugin such as gatsby-source-wordpress-experimental which uses WPGraphQL API.
 
 PRPL
 is an acronym that describes a pattern used to make web pages load and become interactive, faster.

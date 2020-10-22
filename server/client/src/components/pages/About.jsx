@@ -40,10 +40,10 @@ const About = () => {
     return (
       <img
         srcSet={`${desktopImage} 1024w, ${mobileImage} 640w `}
-        sizes='(max-with:600px) 640px, 1024px'
+        sizes='(max-width: 36rem) 33.3vw, 100vw'
         alt='about'
         src={desktopImage}
-        data-src={desktopImage}
+        dataSet-src={desktopImage}
         className='about-image'
       />
     );

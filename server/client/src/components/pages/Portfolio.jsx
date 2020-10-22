@@ -36,11 +36,11 @@ const Portfolio = () => {
   const responsiveImage = (mobileImage, desktopImage) => {
     return (
       <img
+        dataset-src={desktopImage}
         alt='my portfolio'
-        src={desktopImage}
         srcSet={`${desktopImage} 1024w, ${mobileImage} 640w `}
-        size='(max-with:640px) 640px, 1024px'
-        data-src={desktopImage}
+        size='(min-width: 36em) 33.3vw, 100vw'
+        src={desktopImage}
         className='lazy portfolio-landing-image'
       />
     );

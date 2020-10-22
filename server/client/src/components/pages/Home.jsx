@@ -27,7 +27,7 @@ const Home = () => {
 
   const headerText = getInfo()[0];
   const subHeader = getInfo()[1];
-  //const mobileImage = getInfo()[2];
+  const mobileImage = getInfo()[2];
   const deskTopImage = getInfo()[3];
   const subHeader1 = String(subHeader).split("<br/>")[0];
   const subHeader2 = String(subHeader).split("<br/>")[1];
@@ -53,7 +53,8 @@ const Home = () => {
           <img
             src={deskTopImage}
             alt='home page 1'
-            data-src={deskTopImage}
+            srcSet={`${desktopImage} 1024w, ${mobileImage} 640w `}
+            dataSet-src={deskTopImage}
             className='landing-page-image lazy'
           />
         </div>
