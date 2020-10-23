@@ -69,12 +69,10 @@ export const LazyLoad = ({ src, alt, classname }) => {
       didCancel = true;
       if (observer && observer.unobserve) {
         observer.unobserve(imageRef);
-        console.log("image Ref", imageRef);
       }
     };
   }, [src, imageSrc, imageRef]);
 
-  console.log("test");
   return (
     <Image
       ref={setImageRef}
