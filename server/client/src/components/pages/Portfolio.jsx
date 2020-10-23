@@ -41,7 +41,7 @@ const Portfolio = () => {
         //srcSet={`${desktopImage} 1024w, ${mobileImage} 640w `}
         //sizes='(max-width: 600px) 640px, 100vw'
         src={desktopImage}
-        placeholder='./images/placeholder.png'
+        //placeholder='./images/placeholder.png'
         classname='lazy portfolio-landing-image'
       />
     );

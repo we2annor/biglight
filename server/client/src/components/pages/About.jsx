@@ -45,7 +45,7 @@ const About = () => {
         alt='About'
         src={desktopImage}
         classname='about-image'
-        placeholder='./images/placeholder.png'
+        //placeholder='./images/placeholder.png'
       />
     );
   };

@@ -1,9 +1,32 @@
 import React, { useState, useEffect } from "react";
+import styled from "styled-components";
+
+const placeholder =
+  "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkqAcAAIUAgUW0RjgAAAAASUVORK5CYII=";
+
+const Image = styled.img`
+  display: block;
+
+  @keyframes loaded {
+    0% {
+      opacity: 0.1;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  &.loaded:not(.has-error) {
+    animation: loaded 300ms ease-in-out;
+  }
+  &.has-error {
+    content: url(${placeholder});
+  }
+`;
 
 export const LazyLoad = ({
   src,
   alt,
-  placeholder,
+  //placeholder,
   //data,
   //srcSet,
   //sizes,
@@ -39,7 +62,7 @@ export const LazyLoad = ({
             });
           },
           {
-            threshold: 0.0,
+            threshold: 0.03,
             rootMargin: "-10%",
           }
         );
@@ -60,7 +83,7 @@ export const LazyLoad = ({
 
   console.log("test");
   return (
-    <img
+    <Image
       ref={setImageRef}
       src={imageSrc}
       alt={alt}
