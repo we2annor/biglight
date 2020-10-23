@@ -11,13 +11,6 @@
              width: 100vw;
              height: auto;
              object-fit: cover;
-
-             &.loaded:not(.has-error) {
-                animation: loaded 300ms ease-in-out;
-            }
-            &.has-error {
-                content: '';
-            }
          }
      }
 

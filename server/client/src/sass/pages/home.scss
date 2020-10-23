@@ -57,13 +57,6 @@ $width-container: 95vw;
            display: block;
            width: 100vw;;
            height: auto;
-
-           &.loaded:not(.has-error) {
-            animation: loaded 300ms ease-in-out;
-            }
-            &.has-error {
-            content: '';
-            }
         }
     }
 }

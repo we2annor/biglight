@@ -15,6 +15,7 @@ const Image = styled.img`
       opacity: 1;
     }
   }
+
   &.loaded:not(.has-error) {
     animation: loaded 300ms ease-in-out;
   }
@@ -23,15 +24,7 @@ const Image = styled.img`
   }
 `;
 
-export const LazyLoad = ({
-  src,
-  alt,
-  //placeholder,
-  //data,
-  //srcSet,
-  //sizes,
-  classname,
-}) => {
+export const LazyLoad = ({ src, alt, classname }) => {
   const [imageSrc, setImageSrc] = useState(placeholder);
   const [imageRef, setImageRef] = useState();
 
@@ -89,8 +82,6 @@ export const LazyLoad = ({
       alt={alt}
       onLoad={onLoad}
       onError={onError}
-      //srcSet={srcSet}
-      //sizes={sizes}
       loading='lazy'
       className={classname}
     />
