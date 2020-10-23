@@ -38,8 +38,8 @@ const Portfolio = () => {
     return (
       <LazyLoad
         alt='my portfolio'
-        srcSet={`${desktopImage} 1024w, ${mobileImage} 640w `}
-        size='(max-width: 600px) 640px, 100vw'
+        //srcSet={`${desktopImage} 1024w, ${mobileImage} 640w `}
+        //sizes='(max-width: 600px) 640px, 100vw'
         src={desktopImage}
         placeholder='./images/placeholder.png'
         classname='lazy portfolio-landing-image'

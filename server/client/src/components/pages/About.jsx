@@ -40,8 +40,8 @@ const About = () => {
   const responsiveImage = (mobileImage, desktopImage) => {
     return (
       <LazyLoad
-        srcSet={`${desktopImage} 1024w, ${mobileImage} 640w `}
-        sizes='(max-width: 600px) 640px, 100vw'
+        //srcSet={`${desktopImage} 1024w, ${mobileImage} 640w `}
+        //sizes='(max-width: 600px) 640px, 100vw'
         alt='About'
         src={desktopImage}
         classname='about-image'

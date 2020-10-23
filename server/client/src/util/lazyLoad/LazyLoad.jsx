@@ -4,9 +4,9 @@ export const LazyLoad = ({
   src,
   alt,
   placeholder,
-  data,
-  srcSet,
-  size,
+  //data,
+  //srcSet,
+  //sizes,
   classname,
 }) => {
   const [imageSrc, setImageSrc] = useState(placeholder);
@@ -39,8 +39,8 @@ export const LazyLoad = ({
             });
           },
           {
-            threshold: 0.01,
-            rootMargin: "75%",
+            threshold: 0.0,
+            rootMargin: "-10%",
           }
         );
         observer.observe(imageRef);
@@ -48,13 +48,17 @@ export const LazyLoad = ({
         setImageSrc(src);
       }
     }
+
     return () => {
       didCancel = true;
       if (observer && observer.unobserve) {
         observer.unobserve(imageRef);
+        console.log("image Ref", imageRef);
       }
     };
   }, [src, imageSrc, imageRef]);
+
+  console.log("test");
   return (
     <img
       ref={setImageRef}
@@ -62,8 +66,9 @@ export const LazyLoad = ({
       alt={alt}
       onLoad={onLoad}
       onError={onError}
-      srcSet={srcSet}
-      size={size}
+      //srcSet={srcSet}
+      //sizes={sizes}
+      loading='lazy'
       className={classname}
     />
   );
