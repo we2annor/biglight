@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Loading from "../loading/Loading";
 import Error from "../error/Error";
-import { LazyLoad } from "../../util/lazyLoad/LazyLoad";
+import LoadImage from "../LoadImage";
 import { getApi } from "../../axios";
 import "../../sass/pages/portfolio.scss";
 
@@ -34,40 +34,6 @@ const Portfolio = () => {
     return <Error />;
   }
 
-  const responsiveImage = (mobileImage, desktopImage) => {
-    return (
-      <LazyLoad
-        alt='my portfolio'
-        srcSet={`${desktopImage} 1024w, ${mobileImage} 640w `}
-        sizes='(max-width: 600px) 640px, 100vw'
-        src={desktopImage}
-        classname='lazy portfolio-landing-image'
-      />
-    );
-  };
-
-  const getDescription = (header, subHeader) => {
-    return (
-      <div className='portfolio-description'>
-        <div className='description-header-container'>
-          <span className='description-header'>{header}</span>
-          <span>{subHeader}</span>
-        </div>
-      </div>
-    );
-  };
-
-  const getImage = (mobileImage, desktopImage, header, subHeader) => {
-    return (
-      <div className='portfolio-image'>
-        <div className='image-container'>
-          {responsiveImage(mobileImage, desktopImage)}
-        </div>
-        {getDescription(header, subHeader)}
-      </div>
-    );
-  };
-
   const subHeaders = getInfo(results[3])[1];
   const firstSubHeader = String(subHeaders).split("<br/>")[0];
   const secondSubHeader = String(subHeaders).split("<br/>")[1];
@@ -81,24 +47,24 @@ const Portfolio = () => {
       </div>
 
       <div className='container images'>
-        {getImage(
-          getInfo(results[3])[2],
-          getInfo(results[3])[3],
-          getInfo(results[3])[4],
-          getInfo(results[3])[5]
-        )}
-        {getImage(
-          getInfo(results[4])[2],
-          getInfo(results[4])[3],
-          getInfo(results[4])[4],
-          getInfo(results[4])[5]
-        )}
-        {getImage(
-          getInfo(results[5])[2],
-          getInfo(results[5])[3],
-          getInfo(results[5])[4],
-          getInfo(results[5])[5]
-        )}
+        <LoadImage
+          mobileImage={getInfo(results[3])[2]}
+          desktopImage={getInfo(results[3])[3]}
+          header={getInfo(results[3])[4]}
+          subHeader={getInfo(results[3])[5]}
+        />
+        <LoadImage
+          mobileImage={getInfo(results[4])[2]}
+          desktopImage={getInfo(results[4])[3]}
+          header={getInfo(results[4])[4]}
+          subHeader={getInfo(results[3])[5]}
+        />
+        <LoadImage
+          mobileImage={getInfo(results[5])[2]}
+          desktopImage={getInfo(results[5])[3]}
+          header={getInfo(results[5])[4]}
+          subHeader={getInfo(results[5])[5]}
+        />
       </div>
     </div>
   );

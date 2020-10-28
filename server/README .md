@@ -1,18 +1,18 @@
 # biglight
 
 To run this project 
-1. Clone the repository into you local machine
+1. Clone the repository into your local machine
 2. Extract the folder and open it up in your favourite editor.
-3. Chanage direcotry to the server folder and run npm install in the command line to install all the depencies
-4. Change to the client direcotry and run 'npm install ' on the command line to install all the depencies for the client folder.
+3. Change directory to the server folder and run npm install in the command line to install all the dependencies
+4. Change to the client directory and run 'npm install ' on the command line to install all the dependencies for the client folder.
 5. On the sever folder run 'npm run dev' to start the sever and the page will load in your browser on port 3000.
 
 Project Structure
 The project consist of two main folders. The server side and the client side.
-The server side serves all all the spreadsheets, creating APIs, which is then consumed in the client side.
+The server side serves all the spreadsheets, creating APIs, which is then consumed in the client side.
 On the client side, there is an index file, which starts the app and loads all the other components.
 There is a component folder which has all the other components and the pages for the project.
-The sass file contains all the css files (scss) for the project.
+The sass fol contains all the css files (scss) for the project.
 
 The sever is written in node.js and express.
 

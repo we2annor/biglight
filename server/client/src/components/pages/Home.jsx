@@ -32,6 +32,8 @@ const Home = () => {
   const deskTopImage = getInfo()[3];
   const subHeader1 = String(subHeader).split("<br/>")[0];
   const subHeader2 = String(subHeader).split("<br/>")[1];
+  const btLabel1 = "Check out my portfolio";
+  const btLabel2 = "Read more about me";
 
   if (!loading) {
     return <Loading />;
@@ -62,8 +64,8 @@ const Home = () => {
         </div>
       </div>
       <div className='container'>
-        <Button label={"Check out my portfolio"} />
-        <Button label={"Read more about me"} />
+        <Button label={btLabel1} />
+        <Button label={btLabel2} />
       </div>
     </div>
   );
